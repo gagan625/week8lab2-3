@@ -1,0 +1,42 @@
+<!-- Define a function to render each goal -->
+<% function renderGoal(goal) { %>
+    <div class="item-preview">
+      <a href="/single-goal/<%= goal._id %>">
+        <h2>Title: <%= goal.title %></h2>
+        <p>Written by Sami</p>
+      </a>
+    </div>
+  <% } %>
+  
+  
+  <!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Goals</title>
+      <link rel="stylesheet" href="/css/styles.css" />
+      <!-- Link to external stylesheet -->
+    </head>
+    <body>
+      <nav class="navbar">
+        <h1>My Goals</h1>
+        <div class="links">
+          <a href="/">Home</a
+          ><a class="new-item-link" href="/addgoal">New Goal</a>
+        </div>
+      </nav>
+  
+      <div class="content">
+        <div class="home">
+          <div class="item-list">
+            <% if (goals.length > 0) { %>
+            <!-- Call the renderGoal function for each goal -->
+            <% goals.forEach(renderGoal); %> <% } else { %>
+            <p>No goals found.</p>
+            <% } %>
+          </div>
+        </div>
+      </div>
+    </body>
+  </html>
